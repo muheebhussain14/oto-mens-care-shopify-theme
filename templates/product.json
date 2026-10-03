@@ -1,0 +1,138 @@
+{
+  "sections": {
+    "main": {
+      "type": "oto-main-product",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "text": "Natural health product"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bolt",
+            "text": "Enhances vitality & vigour"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bars",
+            "text": "Supports prolonged performance"
+          }
+        },
+        "b4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "shield",
+            "text": "150mg \u00b7 4 tablets per box"
+          }
+        },
+        "t1": {
+          "type": "trust",
+          "settings": {
+            "icon": "truck",
+            "text": "Plain, unmarked packaging"
+          }
+        },
+        "t2": {
+          "type": "trust",
+          "settings": {
+            "icon": "lock",
+            "text": "Secure checkout"
+          }
+        },
+        "t3": {
+          "type": "trust",
+          "settings": {
+            "icon": "headset",
+            "text": "Confidential support"
+          }
+        },
+        "a1": {
+          "type": "accordion",
+          "settings": {
+            "heading": "How to use",
+            "content": "<p>Use as directed on the pack. Do not exceed the recommended use. Keep out of reach of children.</p>"
+          }
+        },
+        "a2": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Ingredients & warnings",
+            "content": "<p>Add the full ingredient list from the product label.</p><ul><li>For adult men 18+ only.</li><li>Consult a healthcare professional before use if you have a medical condition or take medication.</li><li>Discontinue use and seek advice if you experience any adverse reaction.</li></ul>"
+          }
+        },
+        "a3": {
+          "type": "accordion",
+          "settings": {
+            "heading": "Shipping & returns",
+            "content": "<p>Ships in plain, unbranded packaging with a neutral billing descriptor.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "t1",
+        "t2",
+        "t3",
+        "a1",
+        "a2",
+        "a3"
+      ],
+      "settings": {
+        "eyebrow": "Pack of 3",
+        "boxes": 3,
+        "button_label": "Add 3-Pack to Cart",
+        "note": "Secure checkout \u00b7 Discreet packaging"
+      }
+    },
+    "related": {
+      "type": "oto-related",
+      "blocks": {
+        "r1": {
+          "type": "product",
+          "settings": {}
+        },
+        "r2": {
+          "type": "product",
+          "settings": {}
+        },
+        "r3": {
+          "type": "product",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "r1",
+        "r2",
+        "r3"
+      ],
+      "settings": {
+        "eyebrow": "You may also like",
+        "heading": "More from OTO"
+      }
+    },
+    "cta": {
+      "type": "oto-cta",
+      "settings": {
+        "eyebrow": "Take control today",
+        "heading": "A Stronger, Happier You",
+        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related",
+    "cta"
+  ]
+}

@@ -1,0 +1,64 @@
+{{ 'oto-home.css' | asset_url | stylesheet_tag }}
+
+<section class="oto-page-head" {{ section.shopify_attributes }}>
+  <div class="oto-container">
+    <ul class="oto-crumbs" aria-label="Breadcrumb">
+      <li><a href="{{ routes.root_url }}">Home</a></li>
+      <li aria-current="page">{{ collection.title }}</li>
+    </ul>
+    <h1 class="oto-h1 oto-page-head__title">{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}
+      <div class="oto-page-head__lead rte">{{ collection.description }}</div>
+    {%- elsif section.settings.text != blank -%}
+      <p class="oto-page-head__lead">{{ section.settings.text }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+<section class="oto-section">
+  <div class="oto-container">
+    {%- paginate collection.products by section.settings.per_page -%}
+      <p class="oto-count">{{ collection.products_count }} {% if collection.products_count == 1 %}product{% else %}products{% endif %}</p>
+      {%- if collection.products.size > 0 -%}
+        <div class="oto-grid-3">
+          {%- for product in collection.products -%}
+            {%- assign form_id = 'oto-col-' | append: product.id -%}
+            {% render 'oto-product-card',
+              product: product,
+              subtitle: section.settings.subtitle,
+              boxes: section.settings.boxes,
+              button_label: section.settings.button_label,
+              form_id: form_id
+            %}
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}
+          <nav class="oto-pagination" aria-label="Pagination">
+            {%- if paginate.previous -%}<a class="oto-btn oto-btn--ghost" href="{{ paginate.previous.url }}">&larr; {{ 'general.pagination.previous' | t }}</a>{%- endif -%}
+            <span>{{ paginate.current_page }} / {{ paginate.pages }}</span>
+            {%- if paginate.next -%}<a class="oto-btn oto-btn--ghost" href="{{ paginate.next.url }}">{{ 'general.pagination.next' | t }} &rarr;</a>{%- endif -%}
+          </nav>
+        {%- endif -%}
+      {%- else -%}
+        <div class="oto-card oto-empty">
+          <h2>No products found</h2>
+          <a class="oto-btn oto-btn--primary" href="{{ routes.all_products_collection_url }}">Shop all products</a>
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "OTO Collection",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "text", "label": "Intro text (used when the collection has no description)" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle on cards", "default": "Pack of 3" },
+    { "type": "range", "id": "boxes", "label": "Boxes per pack", "info": "Used for the per-box price. Set to 1 to hide it.", "min": 1, "max": 12, "step": 1, "default": 3 },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Add 3-Pack to Cart" },
+    { "type": "range", "id": "per_page", "label": "Products per page", "min": 6, "max": 24, "step": 3, "default": 12 }
+  ]
+}
+{% endschema %}

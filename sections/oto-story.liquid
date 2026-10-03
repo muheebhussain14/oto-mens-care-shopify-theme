@@ -1,0 +1,89 @@
+{{ 'oto-home.css' | asset_url | stylesheet_tag }}
+
+<section class="oto-story" id="oto-story" {{ section.shopify_attributes }}>
+  <div class="oto-story__media">
+    {%- if section.settings.image != blank -%}
+      {{
+        section.settings.image
+        | image_url: width: 1200
+        | image_tag: widths: '600, 900, 1200', sizes: '(min-width: 750px) 50vw, 100vw', loading: 'lazy', alt: section.settings.image.alt
+      }}
+    {%- else -%}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {%- endif -%}
+  </div>
+  <div class="oto-story__copy">
+    {%- if section.settings.eyebrow != blank -%}<p class="oto-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+    {%- if section.settings.heading != blank -%}
+      <h2 class="oto-h2">{{ section.settings.heading | newline_to_br }}</h2>
+    {%- endif -%}
+    <div class="oto-story__text rte">{{ section.settings.text }}</div>
+    {%- if section.blocks.size > 0 -%}
+      <ul class="oto-story__benefits">
+        {%- for block in section.blocks -%}
+          <li {{ block.shopify_attributes }}>{% render 'oto-icon', name: block.settings.icon %}{{ block.settings.text }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}
+      <a class="oto-btn oto-btn--ghost" href="{{ section.settings.button_link | default: '#' }}">
+        {{- section.settings.button_label }} {% render 'oto-icon', name: 'arrow' -%}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "OTO Confidence Story",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Lifestyle image" },
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "More than a supplement" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "info": "Press Enter for a line break.", "default": "For a Stronger,\nMore Confident You" },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>OTO Men's Care is dedicated to helping men feel their best with carefully selected natural ingredients. Our products are designed to support vitality, performance and overall wellbeing, so you can enjoy life with greater confidence.</p>"
+    },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "Our Story" },
+    { "type": "url", "id": "button_link", "label": "Button link" }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "bolt",
+          "options": [
+            { "value": "bolt", "label": "Bolt" },
+            { "value": "bars", "label": "Bars" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "star", "label": "Star" },
+            { "value": "check", "label": "Check" }
+          ]
+        },
+        { "type": "text", "id": "text", "label": "Text", "default": "More Energy" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OTO Confidence Story",
+      "blocks": [
+        { "type": "benefit", "settings": { "icon": "bolt", "text": "More Energy" } },
+        { "type": "benefit", "settings": { "icon": "bars", "text": "Better Performance" } },
+        { "type": "benefit", "settings": { "icon": "heart", "text": "A More Satisfying You" } }
+      ]
+    }
+  ]
+}
+{% endschema %}

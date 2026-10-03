@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "main": {
+      "type": "oto-collection",
+      "settings": {
+        "text": "Premium natural formulations for men's wellness and performance.",
+        "subtitle": "Pack of 3",
+        "boxes": 3,
+        "button_label": "Add 3-Pack to Cart",
+        "per_page": 12
+      }
+    },
+    "benefits": {
+      "type": "oto-values",
+      "blocks": {
+        "c1": {
+          "type": "card",
+          "settings": {
+            "icon": "bars",
+            "title": "Save more on every pack",
+            "text": "Every product is sold as a pack of 3 boxes, so you save compared with buying them one at a time."
+          }
+        },
+        "c2": {
+          "type": "card",
+          "settings": {
+            "icon": "truck",
+            "title": "Discreet by default",
+            "text": "Plain, unbranded packaging and a neutral billing descriptor on every order."
+          }
+        },
+        "c3": {
+          "type": "card",
+          "settings": {
+            "icon": "lock",
+            "title": "Secure checkout",
+            "text": "Encrypted payments and a checkout that keeps your details private."
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {}
+    },
+    "cta": {
+      "type": "oto-cta",
+      "settings": {
+        "eyebrow": "Take control today",
+        "heading": "A Stronger, Happier You",
+        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "benefits",
+    "cta"
+  ]
+}

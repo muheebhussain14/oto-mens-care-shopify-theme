@@ -1,0 +1,43 @@
+{% doc %}
+  Add to Cart form that reuses Dawn's <product-form> element, so the cart drawer / notification,
+  loading state and error handling behave exactly like the rest of the theme.
+
+  @param {object} product - product to add
+  @param {string} [label] - button label (defaults to the theme's "Add to cart" translation)
+  @param {string} [form_id] - unique id for the form
+  @param {string} [class] - extra CSS classes for the button
+
+  @example
+  {% render 'oto-add-to-cart', product: product, label: 'Add 3-Pack to Cart', form_id: 'oto-1' %}
+{% enddoc %}
+{%- assign variant = product.selected_or_first_available_variant -%}
+{%- if product != blank and variant != blank -%}
+  <product-form class="oto-atc" data-section-id="{{ section.id }}">
+    <div class="product-form__error-message-wrapper oto-atc__error" role="alert" hidden>
+      <span class="product-form__error-message"></span>
+    </div>
+    {%- form 'product', product, id: form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+      <input type="hidden" name="id" value="{{ variant.id }}"{% unless variant.available %} disabled{% endunless %}>
+      <button
+        type="submit"
+        name="add"
+        class="oto-btn oto-btn--primary oto-btn--block product-form__submit{% if class != blank %} {{ class }}{% endif %}"
+        {% unless variant.available %}disabled{% endunless %}
+      >
+        <span>
+          {%- if variant.available and label != blank -%}
+            {{- label -}}
+          {%- elsif variant.available -%}
+            {{- 'products.product.add_to_cart' | t -}}
+          {%- else -%}
+            {{- 'products.product.sold_out' | t -}}
+          {%- endif -%}
+        </span>
+        {%- render 'loading-spinner' -%}
+      </button>
+    {%- endform -%}
+  </product-form>
+  <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{%- else -%}
+  <span class="oto-btn oto-btn--primary oto-btn--block" aria-disabled="true">{{ 'products.product.unavailable' | t }}</span>
+{%- endif -%}

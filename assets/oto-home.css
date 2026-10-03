@@ -1,0 +1,187 @@
+/* OTO Men's Care: homepage sections (oto-hero, oto-trust-strip, oto-story, oto-products,
+   oto-featured-product, oto-faq-reviews, oto-cta, oto-legal). Sizes are px because Dawn's root font-size is 10px. */
+
+/* ================= hero ================= */
+.oto-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--oto-bg); }
+.oto-hero__bg { position: absolute; inset: 0; z-index: -2; display: block; }
+.oto-hero__bg img, .oto-hero__bg svg { width: 100%; height: 100%; object-fit: cover; object-position: 78% 40%; }
+.oto-hero::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 8, 9, 0.95) 0%, rgba(7, 8, 9, 0.78) 32%, rgba(7, 8, 9, 0.1) 62%, rgba(7, 8, 9, 0) 100%), linear-gradient(0deg, var(--oto-bg) 0%, transparent 22%); }
+.oto-hero__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: center; gap: 24px; min-height: clamp(560px, 46vw, 680px); padding-block: 56px; }
+.oto-hero__copy { max-width: 560px; }
+.oto-hero__copy .oto-h1 { margin-bottom: 20px; }
+.oto-hero__lead { max-width: 460px; margin: 0 0 28px; font-size: clamp(16px, 1.4vw, 19px); line-height: 1.55; color: var(--oto-text); }
+.oto-hero__visual { position: relative; align-self: stretch; }
+.oto-hero__tagline { position: absolute; right: 0; bottom: 2%; margin: 0; font: 400 clamp(27px, 3vw, 42px)/1.05 var(--oto-font-script); color: var(--oto-red); transform: rotate(-8deg); text-align: left; }
+.oto-hero__tagline span { display: block; padding-left: 1.1em; }
+
+/* ================= trust strip ================= */
+.oto-trust { background: var(--oto-surface); border-block: 1px solid var(--oto-border); }
+.oto-trust__grid { display: grid; grid-template-columns: repeat(var(--oto-cols, 3), 1fr); margin: 0; list-style: none; padding-block: 0; }
+.oto-trust__item { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 28px clamp(10px, 1.8vw, 28px); font: 700 12.8px/1.3 var(--font-body-family); letter-spacing: 0.08em; text-transform: uppercase; color: var(--oto-text); }
+.oto-trust__item + .oto-trust__item { border-left: 1px solid var(--oto-border); }
+.oto-trust__item .oto-icon { width: 34px; height: 34px; }
+
+/* ================= story (confidence / lifestyle) ================= */
+.oto-story { display: grid; grid-template-columns: 1fr 1fr; background: radial-gradient(120% 120% at 100% 0%, #3a0a0e 0%, var(--oto-bg) 60%); }
+.oto-story__media { position: relative; min-height: 380px; }
+.oto-story__media img, .oto-story__media svg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 55% 30%; }
+.oto-story__media::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, var(--oto-bg) 100%), linear-gradient(0deg, rgba(7, 8, 9, 0.4), transparent 40%); }
+.oto-story__copy { align-self: center; max-width: 680px; padding: var(--oto-section-y) var(--oto-inset) var(--oto-section-y) clamp(20px, 3vw, 48px); }
+.oto-story__copy .oto-h2 { margin-bottom: 18px; }
+.oto-story__text { margin-bottom: 26px; color: #ddd6d1; }
+.oto-story__text p { margin: 0 0 12px; }
+.oto-story__benefits { display: flex; flex-wrap: wrap; gap: 14px 28px; margin: 0 0 30px; padding: 0; list-style: none; font-size: 14.5px; font-weight: 500; color: var(--oto-text); }
+.oto-story__benefits li { display: flex; align-items: center; gap: 10px; }
+.oto-story__benefits .oto-icon { width: 26px; height: 26px; }
+
+/* ================= section heads ================= */
+.oto-head { text-align: center; margin-bottom: clamp(26px, 3.5vw, 40px); }
+.oto-head .oto-h2 { margin-bottom: 10px; }
+.oto-head__sub { margin: 0; color: var(--oto-muted); }
+
+/* ================= product catalog ================= */
+.oto-catalog { background: linear-gradient(180deg, var(--oto-bg), #0b0c0d); }
+.oto-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); }
+.oto-product { position: relative; display: flex; flex-direction: column; overflow: hidden; background: var(--oto-surface); border: 1px solid var(--oto-border); border-radius: var(--oto-r-card); transition: border-color 0.25s, transform 0.25s; }
+.oto-product:hover { border-color: rgba(227, 34, 46, 0.6); transform: translateY(-4px); }
+.oto-product.is-featured { border-color: rgba(227, 34, 46, 0.55); }
+.oto-product__tag { position: absolute; top: 14px; left: 14px; z-index: 2; padding: 7px 10px; border-radius: 6px; background: var(--oto-red); color: #fff; font: 700 11px/1 var(--font-body-family); letter-spacing: 0.1em; text-transform: uppercase; }
+.oto-product > .oto-pill { position: absolute; top: 14px; right: 14px; z-index: 2; }
+.oto-product__media { position: relative; display: block; aspect-ratio: 3 / 2; overflow: hidden; background: #0d0e10; }
+.oto-product__media img, .oto-product__media svg { width: 100%; height: 100%; object-fit: contain; transition: transform 0.35s; }
+.oto-product:hover .oto-product__media img { transform: scale(1.04); }
+.oto-product__body { display: flex; flex-direction: column; flex: 1; padding: 20px 22px 22px; }
+.oto-product__title { margin: 0 0 4px; font: 700 20px/1.2 var(--font-heading-family); color: var(--oto-text); }
+.oto-product__title a { color: inherit; text-decoration: none; }
+.oto-product__sub { margin: 0 0 8px; font-size: 14px; color: var(--oto-muted); }
+.oto-product__desc { margin: 0 0 14px; font-size: 14.5px; color: #d6cfca; }
+.oto-product .oto-price { margin-top: auto; margin-bottom: 14px; }
+
+/* ================= featured product ================= */
+.oto-featured { position: relative; isolation: isolate; overflow: hidden; padding-block: var(--oto-section-y); background: #0b0c0d; }
+.oto-featured__bg { position: absolute; inset: 0; z-index: -2; }
+.oto-featured__bg img { width: 100%; height: 100%; object-fit: cover; }
+.oto-featured::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 8, 9, 0.9), rgba(7, 8, 9, 0.55) 55%, rgba(7, 8, 9, 0.35)); }
+.oto-featured__grid { display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: clamp(24px, 4vw, 56px); }
+.oto-featured__copy .oto-h2 { margin-bottom: 16px; }
+.oto-featured__text { max-width: 520px; margin-bottom: 22px; color: #e6dfda; }
+.oto-featured__text p { margin: 0 0 10px; }
+.oto-benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin: 0 0 24px; padding: 0; list-style: none; font-weight: 500; color: var(--oto-text); }
+.oto-benefits li { display: flex; align-items: center; gap: 12px; }
+.oto-benefits .oto-icon { width: 26px; height: 26px; }
+.oto-featured .oto-price { margin-bottom: 18px; }
+.oto-featured__buy { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 22px; }
+.oto-featured__buy product-form { width: auto; min-width: 260px; }
+.oto-note { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 13.5px; color: var(--oto-muted); }
+.oto-note .oto-icon { width: 16px; height: 16px; }
+.oto-featured__visual { position: relative; display: grid; place-items: center; }
+.oto-featured__visual > img, .oto-featured__visual > svg { width: 100%; max-width: 600px; height: auto; border-radius: var(--oto-r-card); }
+.oto-badge { position: absolute; top: 4%; right: clamp(0px, 3%, 30px); z-index: 2; display: grid; place-content: center; width: 104px; height: 104px; border: 3px solid var(--oto-red); border-radius: 50%; background: radial-gradient(circle at 50% 35%, #4a0a10, #240407); box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.85) inset; text-align: center; color: #fff; }
+.oto-badge strong { font: 700 30px/1 var(--font-heading-family); }
+.oto-badge span { margin-top: 3px; font: 700 9px/1.2 var(--font-body-family); letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* ================= reviews + FAQ (solid #950C13, dark cards) ================= */
+.oto-redpanel { background: var(--oto-red-panel); color: #fff; }
+.oto-redpanel .oto-eyebrow { color: #fff; opacity: 0.85; }
+.oto-redpanel .oto-head__sub { color: rgba(255, 255, 255, 0.82); }
+.oto-redpanel__block + .oto-redpanel__block { margin-top: clamp(48px, 6vw, 80px); }
+.oto-darkcard { background: var(--oto-surface); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: var(--oto-r-card); color: var(--oto-text); }
+.oto-review { display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 26px; }
+.oto-stars { display: flex; gap: 3px; margin: 0; }
+.oto-stars .oto-icon { width: 20px; height: 20px; color: var(--oto-star); }
+.oto-stars .oto-icon--off { color: rgba(255, 255, 255, 0.18); }
+.oto-review blockquote { flex: 1; margin: 0; padding: 0; border: 0; font-size: 16px; line-height: 1.6; color: #eee8e3; }
+.oto-review blockquote::before, .oto-review blockquote::after { content: none; }
+.oto-review figcaption { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 14.5px; }
+.oto-review__verified { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--oto-ok); }
+.oto-review__verified .oto-icon { width: 15px; height: 15px; color: var(--oto-ok); }
+.oto-faq__grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(28px, 5vw, 72px); align-items: start; }
+.oto-faq__intro .oto-h2 { margin-bottom: 10px; }
+.oto-faq__intro .oto-head__sub { margin-bottom: 26px; }
+.oto-help { display: flex; align-items: center; gap: 20px; padding: 24px; background: linear-gradient(135deg, #1c0a0c, var(--oto-surface)); }
+.oto-help .oto-icon { width: 52px; height: 52px; }
+.oto-help strong { display: block; font-size: 17px; }
+.oto-help p { margin: 2px 0 14px; font-size: 14.5px; color: var(--oto-muted); }
+.oto-help .oto-btn { min-height: 42px; padding: 0 20px; font-size: 12.5px; }
+.oto-faq__list { display: grid; gap: 10px; }
+.oto-faq__item { border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; background: var(--oto-surface); transition: border-color 0.2s; }
+.oto-faq__item.is-open, .oto-faq__item[open] { border-color: rgba(227, 34, 46, 0.6); }
+.oto-faq__item summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; padding: 18px 22px; font-weight: 600; color: var(--oto-text); list-style: none; cursor: pointer; }
+.oto-faq__item summary::-webkit-details-marker { display: none; }
+.oto-faq__item summary .oto-icon { color: var(--oto-text); transition: transform 0.25s, color 0.25s; }
+.oto-faq__item.is-open summary .oto-icon, .oto-faq__item[open] summary .oto-icon { transform: rotate(45deg); color: var(--oto-red); }
+.oto-faq__body { padding: 0 22px 20px; font-size: 15px; color: #cfc8c3; }
+.oto-faq__body p { margin: 0 0 10px; }
+.oto-faq__body a { color: #fff; text-decoration: underline; }
+
+/* ================= final CTA / prefooter ================= */
+.oto-cta { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; min-height: clamp(300px, 30vw, 440px); border-top: 1px solid rgba(227, 34, 46, 0.35); background: var(--oto-bg); }
+.oto-cta__bg { position: absolute; inset: 0; z-index: -2; display: block; }
+.oto-cta__bg img, .oto-cta__bg svg { width: 100%; height: 100%; object-fit: cover; object-position: 70% 6%; }
+.oto-cta::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, rgba(7, 8, 9, 0.92) 0%, rgba(7, 8, 9, 0.7) 34%, rgba(7, 8, 9, 0.1) 62%, transparent 100%); }
+.oto-cta__inner { padding-block: clamp(44px, 6vw, 72px); }
+.oto-cta__copy { max-width: 520px; }
+.oto-cta__copy .oto-h2 { margin-bottom: 10px; font-size: clamp(29px, 3.6vw, 45px); }
+.oto-cta__text { margin: 0 0 26px; font-size: 16.5px; color: #eadfd9; }
+
+/* ================= legal strip (footer group) ================= */
+.oto-legal { background: #050506; padding-block: 0 28px; }
+.oto-legal__inner { border-top: 0; padding-top: 6px; }
+.oto-legal__inner { padding-top: 22px; border-top: 1px solid var(--oto-border); font-size: 12.8px; color: var(--oto-muted); }
+.oto-legal__inner p { margin: 0 0 10px; }
+.oto-legal__inner p { max-width: 900px; font-size: 11.8px; line-height: 1.5; color: #8d8785; }
+
+/* ================= tablet ================= */
+@media screen and (max-width: 989px) {
+  .oto-product__body { padding: 16px 16px 18px; }
+  .oto-product__title { font-size: 17.5px; }
+  .oto-story__copy { padding-right: var(--oto-inset); }
+  .oto-grid-3 { gap: 16px; }
+  .oto-faq__grid { grid-template-columns: 1fr; }
+}
+
+/* ================= mobile ================= */
+@media screen and (max-width: 749px) {
+  .oto-h1 { font-size: clamp(35px, 10.5vw, 44px); }
+  .oto-hero__bg { bottom: auto; height: 380px; }
+  .oto-hero__bg img, .oto-hero__bg svg { object-position: 80% 30%; }
+  .oto-hero::before { background: linear-gradient(180deg, rgba(7, 8, 9, 0.15) 0%, rgba(7, 8, 9, 0.1) 150px, var(--oto-bg) 380px); }
+  .oto-hero__grid { grid-template-columns: 1fr; gap: 8px; min-height: 0; padding-block: 36px 40px; }
+  .oto-hero__copy { max-width: none; padding-top: 250px; }
+  .oto-hero__copy .oto-btn { width: 100%; }
+  .oto-hero__visual { display: none; }
+
+  .oto-trust__item { flex-direction: column; gap: 8px; padding: 20px 8px; text-align: center; font-size: 11.2px; letter-spacing: 0.05em; }
+  .oto-trust__item .oto-icon { width: 30px; height: 30px; }
+
+  .oto-story { grid-template-columns: 1fr; }
+  .oto-story__media { min-height: 0; aspect-ratio: 4 / 3; }
+  .oto-story__media::after { background: linear-gradient(0deg, var(--oto-bg) 0%, transparent 55%); }
+  .oto-story__copy { max-width: none; padding: 8px var(--oto-inset) var(--oto-section-y); }
+  .oto-story__copy .oto-btn { width: 100%; }
+
+  .oto-grid-3 { grid-template-columns: 1fr; }
+  .oto-product__tag, .oto-product > .oto-pill { top: 10px; }
+  .oto-product__tag { left: 10px; }
+  .oto-product > .oto-pill { right: 10px; }
+  .oto-product__body { padding: 16px; }
+  .oto-product__desc { display: none; }
+
+  .oto-featured__grid { grid-template-columns: 1fr; }
+  .oto-featured__visual { order: -1; margin-bottom: 8px; }
+  .oto-badge { width: 88px; height: 88px; right: 8%; }
+  .oto-badge strong { font-size: 26px; }
+  .oto-benefits { grid-template-columns: 1fr; gap: 10px; }
+  .oto-featured__buy { flex-direction: column; align-items: stretch; }
+  .oto-featured__buy product-form { width: 100%; }
+  .oto-help { flex-direction: row; }
+
+  .oto-cta { align-items: flex-end; min-height: 420px; }
+  .oto-cta::before { background: linear-gradient(0deg, rgba(7, 8, 9, 0.95) 0%, rgba(7, 8, 9, 0.7) 45%, rgba(7, 8, 9, 0.05) 100%); }
+  .oto-cta__bg img, .oto-cta__bg svg { object-position: 60% 20%; }
+  .oto-cta .oto-btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oto-product, .oto-product__media img, .oto-btn, .oto-faq__item, .oto-faq__item summary .oto-icon { transition: none; }
+}

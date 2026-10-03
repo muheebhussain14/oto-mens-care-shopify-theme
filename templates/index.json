@@ -1,0 +1,290 @@
+{
+  "sections": {
+    "hero": {
+      "type": "oto-hero",
+      "settings": {
+        "eyebrow": "Natural men's wellness \u00b7 18+",
+        "heading": "Confidence",
+        "heading_accent": "Starts Here",
+        "text": "Natural support for stronger performance, greater vitality and a more satisfying you.",
+        "button_label": "Shop the 3-Pack",
+        "tagline_1": "A Stronger You",
+        "tagline_2": "A Happier Us"
+      }
+    },
+    "trust": {
+      "type": "oto-trust-strip",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "leaf",
+            "text": "100% Natural Formula"
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "shield",
+            "text": "Trusted by Thousands"
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "star",
+            "text": "Satisfaction Guaranteed"
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {}
+    },
+    "story": {
+      "type": "oto-story",
+      "blocks": {
+        "b1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bolt",
+            "text": "More Energy"
+          }
+        },
+        "b2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bars",
+            "text": "Better Performance"
+          }
+        },
+        "b3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "heart",
+            "text": "A More Satisfying You"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3"
+      ],
+      "settings": {
+        "eyebrow": "More than a supplement",
+        "heading": "For a Stronger,\nMore Confident You",
+        "text": "<p>OTO Men's Care is dedicated to helping men feel their best with carefully selected natural ingredients. Our products are designed to support vitality, performance and overall wellbeing, so you can enjoy life with greater confidence.</p>",
+        "button_label": "Our Story"
+      }
+    },
+    "products": {
+      "type": "oto-products",
+      "blocks": {
+        "p1": {
+          "type": "product",
+          "settings": {
+            "badge": "Best Seller",
+            "subtitle": "Pack of 3",
+            "description": "Natural support for vitality, energy and prolonged performance.",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
+        },
+        "p2": {
+          "type": "product",
+          "settings": {
+            "subtitle": "Pack of 3",
+            "description": "Advanced formula designed for maximum performance and confidence.",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
+        },
+        "p3": {
+          "type": "product",
+          "settings": {
+            "subtitle": "Pack of 3",
+            "description": "Specially formulated to support vitality in men living with diabetes.",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3"
+      ],
+      "settings": {
+        "eyebrow": "Our products",
+        "heading": "Choose Your Confidence",
+        "subheading": "Premium formulations for men's wellness and performance."
+      }
+    },
+    "featured": {
+      "type": "oto-featured-product",
+      "blocks": {
+        "f1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "leaf",
+            "text": "Natural ingredients"
+          }
+        },
+        "f2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bolt",
+            "text": "Boosts stamina"
+          }
+        },
+        "f3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "bars",
+            "text": "Supports performance"
+          }
+        },
+        "f4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "heart",
+            "text": "Greater confidence"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "settings": {
+        "eyebrow": "Featured product",
+        "heading_accent": "OTO Original",
+        "heading": "The Trusted Choice",
+        "text": "<p>Our best-selling formula is a natural health product designed to enhance vitality, increase vigour and support prolonged performance.</p>",
+        "button_label": "Add 3-Pack to Cart",
+        "note": "Secure checkout \u00b7 Discreet packaging",
+        "badge_number": "#1",
+        "badge_label": "Bestseller"
+      }
+    },
+    "faq_reviews": {
+      "type": "oto-faq-reviews",
+      "blocks": {
+        "review-1": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real customer review here.",
+            "name": "Customer name",
+            "verified": false
+          }
+        },
+        "review-2": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real customer review here.",
+            "name": "Customer name",
+            "verified": false
+          }
+        },
+        "review-3": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Add a real customer review here.",
+            "name": "Customer name",
+            "verified": false
+          }
+        },
+        "faq-1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is OTO and how does it work?",
+            "answer": "<p>OTO Men's Care products are natural health products formulated to support vitality, stamina and overall male wellbeing. Follow the directions on the pack for best results.</p>"
+          }
+        },
+        "faq-2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it safe to use?",
+            "answer": "<p>OTO products are intended for healthy adult men 18+. Always read the label, do not exceed the recommended use, and speak to a healthcare professional if you are unsure.</p>"
+          }
+        },
+        "faq-3": {
+          "type": "faq",
+          "settings": {
+            "question": "Will my order be discreetly packaged?",
+            "answer": "<p>Yes. Every order ships in plain packaging with no product branding on the outside, and your billing statement shows a neutral descriptor.</p>"
+          }
+        },
+        "faq-4": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders are processed quickly and shipped discreetly. Delivery times depend on your location, and you will receive tracking as soon as your order ships.</p>"
+          }
+        },
+        "faq-5": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I use this if I have a medical condition or take medication?",
+            "answer": "<p>Please consult your doctor or pharmacist before use if you have a medical condition (including diabetes, heart or blood-pressure conditions) or take any medication.</p>"
+          }
+        },
+        "faq-6": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We stand behind our products. If there is a problem with your order, contact our support team and we will make it right.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "review-1",
+        "review-2",
+        "review-3",
+        "faq-1",
+        "faq-2",
+        "faq-3",
+        "faq-4",
+        "faq-5",
+        "faq-6"
+      ],
+      "settings": {
+        "reviews_eyebrow": "Real results",
+        "reviews_heading": "What Our Customers Say",
+        "faq_eyebrow": "Questions?",
+        "faq_heading": "Frequently Asked Questions",
+        "faq_text": "Everything you need to know before you order.",
+        "help_heading": "Still have questions?",
+        "help_text": "Our support team is here to help.",
+        "help_button_label": "Contact Us"
+      }
+    },
+    "cta": {
+      "type": "oto-cta",
+      "settings": {
+        "eyebrow": "Take control today",
+        "heading": "A Stronger, Happier You",
+        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
+        "button_label": "Shop Now"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "trust",
+    "story",
+    "products",
+    "featured",
+    "faq_reviews",
+    "cta"
+  ]
+}

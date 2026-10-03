@@ -1,0 +1,76 @@
+{
+  "sections": {
+    "head": {
+      "type": "oto-page-head",
+      "settings": {
+        "text": "Natural support for vitality, performance and confidence, made for men who want to feel their best."
+      }
+    },
+    "story": {
+      "type": "oto-story",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "eyebrow": "Our story",
+        "heading": "More Than a\nSupplement",
+        "text": "<p>OTO Men's Care is dedicated to helping men feel their best with carefully selected natural ingredients. Our products are designed to support vitality, performance and overall wellbeing, so you can enjoy life with greater confidence.</p><p>We believe men's wellness should be straightforward, private and free of judgement. That's why everything we do, from how we explain our products to how we pack and ship them, is built around discretion and trust.</p>",
+        "button_label": "Shop Products",
+        "button_link": "shopify://collections/all"
+      }
+    },
+    "values": {
+      "type": "oto-values",
+      "blocks": {
+        "c1": {
+          "type": "card",
+          "settings": {
+            "icon": "leaf",
+            "title": "Quality first",
+            "text": "Natural health products made with care, and clearly labelled so you know exactly what you're taking."
+          }
+        },
+        "c2": {
+          "type": "card",
+          "settings": {
+            "icon": "lock",
+            "title": "Privacy always",
+            "text": "Plain packaging, a neutral billing descriptor and a checkout that keeps your details secure."
+          }
+        },
+        "c3": {
+          "type": "card",
+          "settings": {
+            "icon": "headset",
+            "title": "Real support",
+            "text": "A friendly team that answers questions confidentially and helps if anything goes wrong."
+          }
+        }
+      },
+      "block_order": [
+        "c1",
+        "c2",
+        "c3"
+      ],
+      "settings": {
+        "eyebrow": "What we stand for",
+        "heading": "Our Commitments"
+      }
+    },
+    "cta": {
+      "type": "oto-cta",
+      "settings": {
+        "eyebrow": "Take control today",
+        "heading": "A Stronger, Happier You",
+        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "head",
+    "story",
+    "values",
+    "cta"
+  ]
+}

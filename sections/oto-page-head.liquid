@@ -1,0 +1,29 @@
+
+{%- liquid
+  assign page_title = section.settings.heading
+  if page_title == blank
+    assign page_title = page.title | default: collection.title | default: page_title
+  endif
+-%}
+<section class="oto-page-head" {{ section.shopify_attributes }}>
+  <div class="oto-container">
+    <ul class="oto-crumbs" aria-label="Breadcrumb">
+      <li><a href="{{ routes.root_url }}">Home</a></li>
+      <li aria-current="page">{{ page_title }}</li>
+    </ul>
+    <h1 class="oto-h1 oto-page-head__title">{{ page_title }}</h1>
+    {%- if section.settings.text != blank -%}<p class="oto-page-head__lead">{{ section.settings.text }}</p>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "OTO Page Header",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "info": "Leave empty to use the page title." },
+    { "type": "textarea", "id": "text", "label": "Intro text" }
+  ],
+  "presets": [{ "name": "OTO Page Header" }]
+}
+{% endschema %}

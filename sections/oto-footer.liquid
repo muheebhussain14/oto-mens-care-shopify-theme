@@ -1,0 +1,113 @@
+{{ 'oto-footer.css' | asset_url | stylesheet_tag }}
+
+<footer class="oto-footer" {{ section.shopify_attributes }}>
+  <div class="oto-container oto-footer__grid">
+
+    <div class="oto-footer__brand">
+      {%- if section.settings.logo != blank -%}
+        <a href="{{ routes.root_url }}" class="oto-footer__logo">
+          {{ section.settings.logo | image_url: width: 360 | image_tag: width: 180, loading: 'lazy', alt: shop.name }}
+        </a>
+      {%- else -%}
+        <a href="{{ routes.root_url }}" class="oto-footer__logo oto-footer__logo--text">{{ shop.name }}</a>
+      {%- endif -%}
+      {%- if section.settings.text != blank -%}<p>{{ section.settings.text }}</p>{%- endif -%}
+
+      {%- liquid
+        assign social = false
+        if settings.social_facebook_link != blank or settings.social_instagram_link != blank or settings.social_youtube_link != blank or settings.social_tiktok_link != blank
+          assign social = true
+        endif
+      -%}
+      {%- if social -%}
+        <ul class="oto-footer__social">
+          {%- if settings.social_facebook_link != blank -%}
+            <li><a href="{{ settings.social_facebook_link }}" aria-label="Facebook" rel="noopener" target="_blank">{% render 'oto-icon', name: 'facebook' %}</a></li>
+          {%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}
+            <li><a href="{{ settings.social_instagram_link }}" aria-label="Instagram" rel="noopener" target="_blank">{% render 'oto-icon', name: 'instagram' %}</a></li>
+          {%- endif -%}
+          {%- if settings.social_youtube_link != blank -%}
+            <li><a href="{{ settings.social_youtube_link }}" aria-label="YouTube" rel="noopener" target="_blank">{% render 'oto-icon', name: 'youtube' %}</a></li>
+          {%- endif -%}
+          {%- if settings.social_tiktok_link != blank -%}
+            <li><a href="{{ settings.social_tiktok_link }}" aria-label="TikTok" rel="noopener" target="_blank">{% render 'oto-icon', name: 'tiktok' %}</a></li>
+          {%- endif -%}
+        </ul>
+      {%- endif -%}
+    </div>
+
+    <nav class="oto-footer__col" aria-label="{{ section.settings.menu_1_title | escape }}">
+      <h2 class="oto-footer__heading">{{ section.settings.menu_1_title }}</h2>
+      {%- for link in section.settings.menu_1.links -%}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    <nav class="oto-footer__col" aria-label="{{ section.settings.menu_2_title | escape }}">
+      <h2 class="oto-footer__heading">{{ section.settings.menu_2_title }}</h2>
+      {%- for link in section.settings.menu_2.links -%}
+        <a href="{{ link.url }}">{{ link.title }}</a>
+      {%- endfor -%}
+    </nav>
+
+    {%- if section.settings.show_newsletter -%}
+      <div class="oto-footer__col oto-footer__news">
+        <h2 class="oto-footer__heading">{{ section.settings.news_title }}</h2>
+        {%- if section.settings.news_text != blank -%}<p>{{ section.settings.news_text }}</p>{%- endif -%}
+        {%- form 'customer', id: 'OtoFooterNewsletter', class: 'oto-footer__form' -%}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="oto-footer__field">
+          <label class="oto-sr" for="OtoFooterEmail">{{ 'newsletter.label' | t }}</label>
+          <input
+            id="OtoFooterEmail"
+            type="email"
+            name="contact[email]"
+            value="{{ form.email }}"
+            placeholder="{{ section.settings.news_placeholder | escape }}"
+            autocomplete="email"
+            required
+          >
+          <button type="submit" name="commit" aria-label="{{ 'newsletter.button_label' | t }}">{% render 'oto-icon', name: 'arrow' %}</button>
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p class="oto-footer__msg" role="status">{{ 'newsletter.success' | t }}</p>
+          {%- elsif form.errors -%}
+            <p class="oto-footer__msg oto-footer__msg--error" role="alert">{{ form.errors.translated_fields.email | capitalize }} {{ form.errors.messages.email }}</p>
+          {%- endif -%}
+        {%- endform -%}
+      </div>
+    {%- endif -%}
+  </div>
+
+  <div class="oto-container oto-footer__legal">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ section.settings.copyright }}</p>
+    {%- if section.settings.disclaimer != blank -%}
+      <p class="oto-footer__disclaimer">{{ section.settings.disclaimer }}</p>
+    {%- endif -%}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "OTO Footer",
+  "tag": "section",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "White logo on a transparent background." },
+    { "type": "textarea", "id": "text", "label": "Brand text", "default": "Natural support for vitality, performance and confidence. For men 18+." },
+    { "type": "header", "content": "Menus" },
+    { "type": "text", "id": "menu_1_title", "label": "First menu heading", "default": "Shop" },
+    { "type": "link_list", "id": "menu_1", "label": "First menu", "default": "footer" },
+    { "type": "text", "id": "menu_2_title", "label": "Second menu heading", "default": "Customer Care" },
+    { "type": "link_list", "id": "menu_2", "label": "Second menu" },
+    { "type": "header", "content": "Newsletter" },
+    { "type": "checkbox", "id": "show_newsletter", "label": "Show newsletter", "default": true },
+    { "type": "text", "id": "news_title", "label": "Heading", "default": "Stay Connected" },
+    { "type": "text", "id": "news_text", "label": "Text", "default": "Get the latest updates and exclusive offers." },
+    { "type": "text", "id": "news_placeholder", "label": "Placeholder", "default": "Your email address" },
+    { "type": "header", "content": "Legal" },
+    { "type": "text", "id": "copyright", "label": "Copyright text (year is added automatically)", "default": "OTO Men's Care. All rights reserved. For adults 18+. Discreet products. A stronger tomorrow." },
+    { "type": "textarea", "id": "disclaimer", "label": "Health disclaimer", "default": "These statements have not been evaluated by any health authority. These products are not intended to diagnose, treat, cure or prevent any disease. Consult a healthcare professional before use, especially if you have a medical condition or take medication." }
+  ]
+}
+{% endschema %}

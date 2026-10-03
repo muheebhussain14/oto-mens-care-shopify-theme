@@ -1,0 +1,104 @@
+{
+  "sections": {
+    "head": {
+      "type": "oto-page-head",
+      "settings": {
+        "text": "Everything you need to know before you order."
+      }
+    },
+    "faq": {
+      "type": "oto-faq-reviews",
+      "blocks": {
+        "f1": {
+          "type": "faq",
+          "settings": {
+            "question": "What is OTO and how does it work?",
+            "answer": "<p>OTO Men's Care products are natural health products formulated to support vitality, stamina and overall male wellbeing. Follow the directions on the pack for best results.</p>"
+          }
+        },
+        "f2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it safe to use?",
+            "answer": "<p>OTO products are intended for healthy adult men 18+. Always read the label, do not exceed the recommended use, and speak to a healthcare professional if you are unsure.</p>"
+          }
+        },
+        "f3": {
+          "type": "faq",
+          "settings": {
+            "question": "Will my order be discreetly packaged?",
+            "answer": "<p>Yes. Every order ships in plain packaging with no product branding on the outside, and your billing statement shows a neutral descriptor.</p>"
+          }
+        },
+        "f4": {
+          "type": "faq",
+          "settings": {
+            "question": "How long does shipping take?",
+            "answer": "<p>Orders are processed quickly and shipped discreetly. Delivery times depend on your location, and you will receive tracking as soon as your order ships.</p>"
+          }
+        },
+        "f5": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I track my order?",
+            "answer": "<p>Once your order ships you will receive an email with a tracking link. If you have not received it, contact our support team.</p>"
+          }
+        },
+        "f6": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is it sold as a pack of 3?",
+            "answer": "<p>Each box contains 4 tablets. The 3-pack gives you 12 tablets and a lower price per box than buying individually.</p>"
+          }
+        },
+        "f7": {
+          "type": "faq",
+          "settings": {
+            "question": "Can I use this if I have a medical condition or take medication?",
+            "answer": "<p>Please consult your doctor or pharmacist before use if you have a medical condition (including diabetes, heart or blood-pressure conditions) or take any medication.</p>"
+          }
+        },
+        "f8": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>We stand behind our products. If there is a problem with your order, contact our support team and we will make it right.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "f4",
+        "f5",
+        "f6",
+        "f7",
+        "f8"
+      ],
+      "settings": {
+        "faq_eyebrow": "Questions?",
+        "faq_heading": "Your questions answered",
+        "faq_text": "Can't find what you need? Contact us.",
+        "help_heading": "Still have questions?",
+        "help_text": "Our support team is here to help.",
+        "help_button_label": "Contact Us"
+      }
+    },
+    "cta": {
+      "type": "oto-cta",
+      "settings": {
+        "eyebrow": "Take control today",
+        "heading": "A Stronger, Happier You",
+        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
+        "button_label": "Shop Now",
+        "button_link": "shopify://collections/all"
+      }
+    }
+  },
+  "order": [
+    "head",
+    "faq",
+    "cta"
+  ]
+}

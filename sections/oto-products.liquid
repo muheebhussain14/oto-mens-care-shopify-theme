@@ -1,0 +1,60 @@
+{{ 'oto-home.css' | asset_url | stylesheet_tag }}
+
+<section class="oto-section oto-catalog" id="oto-products" {{ section.shopify_attributes }}>
+  <div class="oto-container">
+    <header class="oto-head">
+      {%- if section.settings.eyebrow != blank -%}<p class="oto-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+      {%- if section.settings.heading != blank -%}<h2 class="oto-h2">{{ section.settings.heading }}</h2>{%- endif -%}
+      {%- if section.settings.subheading != blank -%}<p class="oto-head__sub">{{ section.settings.subheading }}</p>{%- endif -%}
+    </header>
+
+    <div class="oto-grid-3">
+      {%- for block in section.blocks -%}
+        {%- assign form_id = 'oto-card-' | append: block.id -%}
+        {% render 'oto-product-card',
+          product: block.settings.product,
+          badge: block.settings.badge,
+          subtitle: block.settings.subtitle,
+          description: block.settings.description,
+          boxes: block.settings.boxes,
+          button_label: block.settings.button_label,
+          form_id: form_id,
+          shopify_attributes: block.shopify_attributes
+        %}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "OTO Product Catalog",
+  "tag": "section",
+  "max_blocks": 6,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Our products" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Choose Your Confidence" },
+    { "type": "text", "id": "subheading", "label": "Subheading", "default": "Premium formulations for men's wellness and performance." }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "text", "id": "badge", "label": "Badge (optional)", "info": "For example: Best Seller. Also highlights the card." },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Pack of 3" },
+        { "type": "textarea", "id": "description", "label": "Short description" },
+        { "type": "range", "id": "boxes", "label": "Boxes per pack", "info": "Used for the per-box price. Set to 1 to hide it.", "min": 1, "max": 12, "step": 1, "default": 3 },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Add 3-Pack to Cart" }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OTO Product Catalog",
+      "blocks": [{ "type": "product" }, { "type": "product" }, { "type": "product" }]
+    }
+  ]
+}
+{% endschema %}

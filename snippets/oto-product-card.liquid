@@ -1,0 +1,53 @@
+{% doc %}
+  Product card used by the catalog, collection and related-products sections.
+  Title, price, compare-at price, image and Add to Cart all come from the Shopify product.
+
+  @param {object} product - product to render (may be blank, a placeholder card is shown)
+  @param {string} [badge] - optional badge text, also highlights the card
+  @param {string} [subtitle] - line under the title
+  @param {string} [description] - short description
+  @param {number} [boxes] - boxes per pack, used for the per-box price
+  @param {string} [button_label] - Add to Cart label
+  @param {string} [form_id] - unique id for the add-to-cart form
+  @param {string} [shopify_attributes] - theme editor attributes to place on the card
+
+  @example
+  {% render 'oto-product-card', product: product, boxes: 3, form_id: 'card-1' %}
+{% enddoc %}
+{%- assign variant = product.selected_or_first_available_variant -%}
+{%- assign image = product.featured_media.preview_image -%}
+<article class="oto-product{% if badge != blank %} is-featured{% endif %}" {{ shopify_attributes }}>
+  {%- if badge != blank -%}<span class="oto-product__tag">{{ badge }}</span>{%- endif -%}
+  {%- if product != blank -%}{%- render 'oto-save-pill', variant: variant -%}{%- endif -%}
+
+  {%- if product != blank -%}
+    <a class="oto-product__media" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+      {%- if image != blank -%}
+        {{
+          image
+          | image_url: width: 900
+          | image_tag:
+            widths: '450, 700, 900',
+            sizes: '(min-width: 990px) 30vw, (min-width: 750px) 33vw, 100vw',
+            loading: 'lazy',
+            alt: image.alt | default: product.title
+        }}
+      {%- else -%}
+        {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </a>
+    <div class="oto-product__body">
+      <h3 class="oto-product__title"><a href="{{ product.url }}">{{ product.title }}</a></h3>
+      {%- if subtitle != blank -%}<p class="oto-product__sub">{{ subtitle }}</p>{%- endif -%}
+      {%- if description != blank -%}<p class="oto-product__desc">{{ description }}</p>{%- endif -%}
+      {% render 'oto-price', variant: variant, boxes: boxes %}
+      {% render 'oto-add-to-cart', product: product, label: button_label, form_id: form_id %}
+    </div>
+  {%- else -%}
+    <div class="oto-product__media">{{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}</div>
+    <div class="oto-product__body">
+      <h3 class="oto-product__title">Select a product</h3>
+      <p class="oto-product__sub">Choose a product for this block in the theme editor.</p>
+    </div>
+  {%- endif -%}
+</article>

@@ -1,0 +1,21 @@
+{% doc %}
+  Price block: current price, compare-at price, optional savings pill and per-box price.
+  Every value comes from the Shopify variant; nothing is hardcoded.
+
+  @param {object} variant - the variant to price
+  @param {number} [boxes] - boxes per pack; when above 1 the per-box price is shown
+  @param {boolean} [large] - larger type and inline savings pill (featured product)
+
+  @example
+  {% render 'oto-price', variant: product.selected_or_first_available_variant, boxes: 3 %}
+{% enddoc %}
+<div class="oto-price{% if large %} oto-price--lg{% endif %}">
+  <span class="oto-price__now">{{ variant.price | money }}</span>
+  {%- if variant.compare_at_price > variant.price -%}
+    <s class="oto-price__was">{{ variant.compare_at_price | money }}</s>
+    {%- if large -%}{%- render 'oto-save-pill', variant: variant -%}{%- endif -%}
+  {%- endif -%}
+  {%- if boxes > 1 -%}
+    <span class="oto-price__each">{{ variant.price | divided_by: boxes | money }} / box</span>
+  {%- endif -%}
+</div>

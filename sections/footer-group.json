@@ -1,0 +1,21 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "oto-footer",
+      "settings": {
+        "menu_1_title": "Shop",
+        "menu_1": "footer",
+        "menu_2_title": "Customer Care",
+        "show_newsletter": true,
+        "news_title": "Stay Connected",
+        "news_text": "Get the latest updates and exclusive offers.",
+        "news_placeholder": "Your email address"
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

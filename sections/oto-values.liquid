@@ -1,0 +1,69 @@
+
+<section class="oto-section oto-values-section" {{ section.shopify_attributes }}>
+  <div class="oto-container">
+    {%- if section.settings.heading != blank or section.settings.eyebrow != blank -%}
+      <header class="oto-head">
+        {%- if section.settings.eyebrow != blank -%}<p class="oto-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="oto-h2">{{ section.settings.heading }}</h2>{%- endif -%}
+      </header>
+    {%- endif -%}
+    <div class="oto-values" style="--oto-cols: {{ section.blocks.size | at_least: 1 }}">
+      {%- for block in section.blocks -%}
+        <div class="oto-card oto-value" {{ block.shopify_attributes }}>
+          {% render 'oto-icon', name: block.settings.icon %}
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "OTO Info Cards",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label" },
+    { "type": "text", "id": "heading", "label": "Heading" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Icon",
+          "default": "leaf",
+          "options": [
+            { "value": "leaf", "label": "Leaf" },
+            { "value": "lock", "label": "Lock" },
+            { "value": "headset", "label": "Headset" },
+            { "value": "truck", "label": "Truck" },
+            { "value": "shield", "label": "Shield" },
+            { "value": "bars", "label": "Bars" },
+            { "value": "heart", "label": "Heart" },
+            { "value": "bolt", "label": "Bolt" },
+            { "value": "star", "label": "Star" }
+          ]
+        },
+        { "type": "text", "id": "title", "label": "Title", "default": "Quality first" },
+        { "type": "textarea", "id": "text", "label": "Text", "default": "Add a short description here." }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "OTO Info Cards",
+      "blocks": [
+        { "type": "card", "settings": { "icon": "leaf", "title": "Quality first", "text": "Add a short description here." } },
+        { "type": "card", "settings": { "icon": "lock", "title": "Privacy always", "text": "Add a short description here." } },
+        { "type": "card", "settings": { "icon": "headset", "title": "Real support", "text": "Add a short description here." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

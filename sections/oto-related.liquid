@@ -1,0 +1,52 @@
+{{ 'oto-home.css' | asset_url | stylesheet_tag }}
+
+{%- if section.blocks.size > 0 -%}
+  <section class="oto-section oto-related" {{ section.shopify_attributes }}>
+    <div class="oto-container">
+      <header class="oto-head">
+        {%- if section.settings.eyebrow != blank -%}<p class="oto-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2 class="oto-h2">{{ section.settings.heading }}</h2>{%- endif -%}
+      </header>
+      <div class="oto-grid-2">
+        {%- for block in section.blocks -%}
+          {%- if block.settings.product != product -%}
+            {%- assign form_id = 'oto-rel-' | append: block.id -%}
+            {% render 'oto-product-card',
+              product: block.settings.product,
+              subtitle: block.settings.subtitle,
+              boxes: block.settings.boxes,
+              button_label: block.settings.button_label,
+              form_id: form_id,
+              shopify_attributes: block.shopify_attributes
+            %}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "OTO Related Products",
+  "tag": "section",
+  "max_blocks": 4,
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Small label", "default": "You may also like" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "More from OTO" }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product", "info": "The product currently being viewed is skipped automatically." },
+        { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "Pack of 3" },
+        { "type": "range", "id": "boxes", "label": "Boxes per pack", "min": 1, "max": 12, "step": 1, "default": 3 },
+        { "type": "text", "id": "button_label", "label": "Button label", "default": "Add 3-Pack to Cart" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "OTO Related Products", "blocks": [{ "type": "product" }, { "type": "product" }, { "type": "product" }] }]
+}
+{% endschema %}
