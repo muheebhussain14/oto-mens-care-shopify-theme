@@ -7,7 +7,7 @@
       }
     },
     "faq": {
-      "type": "oto-faq-reviews",
+      "type": "oto-faq",
       "blocks": {
         "f1": {
           "type": "faq",
@@ -77,12 +77,18 @@
         "f8"
       ],
       "settings": {
-        "faq_eyebrow": "Questions?",
-        "faq_heading": "Your questions answered",
-        "faq_text": "Can't find what you need? Contact us.",
+        "background_color": "#950C13",
+        "text_color": "#FFFFFF",
+        "overlay": 70,
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "eyebrow": "Questions?",
+        "heading": "Your questions answered",
+        "text": "Can't find what you need? Contact us.",
         "help_heading": "Still have questions?",
         "help_text": "Our support team is here to help.",
-        "help_button_label": "Contact Us"
+        "help_button_label": "Contact Us",
+        "help_button_link": ""
       }
     },
     "cta": {
