@@ -1,1 +1,1 @@
-/Users/book/Downloads/OTO - eric/Website Creation/shopify-theme/AGENTS.md
+AGENTS.md
