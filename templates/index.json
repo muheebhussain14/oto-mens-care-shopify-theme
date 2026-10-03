@@ -1,13 +1,24 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "hero": {
       "type": "oto-hero",
       "settings": {
-        "eyebrow": "Natural men's wellness \u00b7 18+",
+        "image": "shopify://shop_images/banner-bg-2.jpg",
+        "eyebrow": "Natural men's wellness · 18+",
         "heading": "Confidence",
         "heading_accent": "Starts Here",
         "text": "Natural support for stronger performance, greater vitality and a more satisfying you.",
         "button_label": "Shop the 3-Pack",
+        "button_link": "",
         "tagline_1": "A Stronger You",
         "tagline_2": "A Happier Us"
       }
@@ -75,10 +86,12 @@
         "b3"
       ],
       "settings": {
+        "image": "shopify://shop_images/about-background-clean.jpg",
         "eyebrow": "More than a supplement",
         "heading": "For a Stronger,\nMore Confident You",
         "text": "<p>OTO Men's Care is dedicated to helping men feel their best with carefully selected natural ingredients. Our products are designed to support vitality, performance and overall wellbeing, so you can enjoy life with greater confidence.</p>",
-        "button_label": "Our Story"
+        "button_label": "Our Story",
+        "button_link": ""
       }
     },
     "products": {
@@ -87,6 +100,7 @@
         "p1": {
           "type": "product",
           "settings": {
+            "product": "oto-4",
             "badge": "Best Seller",
             "subtitle": "Pack of 3",
             "description": "Natural support for vitality, energy and prolonged performance.",
@@ -94,20 +108,24 @@
             "button_label": "Add 3-Pack to Cart"
           }
         },
-        "p2": {
+        "product_y6iaz8": {
           "type": "product",
           "settings": {
+            "product": "oto-4",
+            "badge": "Best Seller",
             "subtitle": "Pack of 3",
-            "description": "Advanced formula designed for maximum performance and confidence.",
+            "description": "Natural support for vitality, energy and prolonged performance.",
             "boxes": 3,
             "button_label": "Add 3-Pack to Cart"
           }
         },
-        "p3": {
+        "product_grUJVy": {
           "type": "product",
           "settings": {
+            "product": "oto-4",
+            "badge": "Best Seller",
             "subtitle": "Pack of 3",
-            "description": "Specially formulated to support vitality in men living with diabetes.",
+            "description": "Natural support for vitality, energy and prolonged performance.",
             "boxes": 3,
             "button_label": "Add 3-Pack to Cart"
           }
@@ -115,8 +133,8 @@
       },
       "block_order": [
         "p1",
-        "p2",
-        "p3"
+        "product_y6iaz8",
+        "product_grUJVy"
       ],
       "settings": {
         "eyebrow": "Our products",
@@ -163,12 +181,14 @@
         "f4"
       ],
       "settings": {
+        "product": "oto-4",
+        "background": "shopify://shop_images/oto-product-rock.webp",
         "eyebrow": "Featured product",
         "heading_accent": "OTO Original",
         "heading": "The Trusted Choice",
         "text": "<p>Our best-selling formula is a natural health product designed to enhance vitality, increase vigour and support prolonged performance.</p>",
         "button_label": "Add 3-Pack to Cart",
-        "note": "Secure checkout \u00b7 Discreet packaging",
+        "note": "Secure checkout · Discreet packaging",
         "badge_number": "#1",
         "badge_label": "Bestseller"
       }
@@ -265,16 +285,19 @@
         "faq_text": "Everything you need to know before you order.",
         "help_heading": "Still have questions?",
         "help_text": "Our support team is here to help.",
-        "help_button_label": "Contact Us"
+        "help_button_label": "Contact Us",
+        "help_button_link": ""
       }
     },
     "cta": {
       "type": "oto-cta",
       "settings": {
+        "image": "shopify://shop_images/oto-cta.webp",
         "eyebrow": "Take control today",
         "heading": "A Stronger, Happier You",
         "text": "Natural. Discreet. Trusted. OTO Men's Care.",
-        "button_label": "Shop Now"
+        "button_label": "Shop Now",
+        "button_link": ""
       }
     }
   },
