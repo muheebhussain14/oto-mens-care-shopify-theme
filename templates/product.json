@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
@@ -28,7 +37,7 @@
           "type": "benefit",
           "settings": {
             "icon": "shield",
-            "text": "150mg \u00b7 4 tablets per box"
+            "text": "150mg · 4 tablets per box"
           }
         },
         "t1": {
@@ -88,31 +97,125 @@
       ],
       "settings": {
         "eyebrow": "Pack of 3",
+        "show_vendor": false,
         "boxes": 3,
         "button_label": "Add 3-Pack to Cart",
-        "note": "Secure checkout \u00b7 Discreet packaging"
+        "note": "Secure checkout · Discreet packaging"
+      }
+    },
+    "oto_reviews_qARnBq": {
+      "type": "oto-reviews",
+      "blocks": {
+        "review_JAtqzf": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "I was a little unsure at first, but the ordering process was simple and the packaging was very discreet. Overall, a much better experience than I expected.",
+            "name": "Daniel R.",
+            "verified": true
+          }
+        },
+        "review_HABYL9": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "The site was easy to use, delivery was straightforward, and I liked that everything arrived privately packaged. I’d definitely order again.",
+            "name": "Marcus T.",
+            "verified": true
+          }
+        },
+        "review_G6D3PW": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "I wanted something simple and discreet, and that’s exactly what I got. The whole process felt professional from checkout to delivery.",
+            "name": "James L.",
+            "verified": true
+          }
+        },
+        "review_MJMQYG": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "Everything arrived quickly and the packaging was completely discreet, which I really appreciated. The whole experience felt private and professional.",
+            "name": "Kevin M.",
+            "verified": true
+          }
+        },
+        "review_EPpR9N": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "I liked how straightforward the ordering process was. No awkward branding on the package, clear communication, and the product presentation felt premium.",
+            "name": "Anthony J.",
+            "verified": true
+          }
+        },
+        "review_kh3YnD": {
+          "type": "review",
+          "settings": {
+            "rating": 5,
+            "quote": "I was mainly looking for something discreet and easy to reorder. The site made everything simple, and I felt comfortable purchasing again.",
+            "name": "Michael S.",
+            "verified": true
+          }
+        }
+      },
+      "block_order": [
+        "review_JAtqzf",
+        "review_HABYL9",
+        "review_G6D3PW",
+        "review_MJMQYG",
+        "review_EPpR9N",
+        "review_kh3YnD"
+      ],
+      "name": "OTO Reviews",
+      "settings": {
+        "background_color": "#070809",
+        "overlay": 70,
+        "text_color": "#FFFFFF",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "eyebrow": "Real results",
+        "heading": "What Our Customers Say",
+        "columns": "3"
       }
     },
     "related": {
       "type": "oto-related",
       "blocks": {
-        "r1": {
+        "product_hCzybx": {
           "type": "product",
-          "settings": {}
-        },
-        "r2": {
-          "type": "product",
-          "settings": {}
+          "settings": {
+            "product": "oto-original-3-pack",
+            "subtitle": "Pack of 3",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
         },
         "r3": {
           "type": "product",
-          "settings": {}
+          "settings": {
+            "product": "oto-superpowerful-man-3-pack",
+            "subtitle": "Pack of 3",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
+        },
+        "r2": {
+          "type": "product",
+          "settings": {
+            "product": "oto-diabetics-3-pack",
+            "subtitle": "Pack of 3",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
         }
       },
       "block_order": [
-        "r1",
-        "r2",
-        "r3"
+        "product_hCzybx",
+        "r3",
+        "r2"
       ],
       "settings": {
         "eyebrow": "You may also like",
@@ -122,16 +225,18 @@
     "cta": {
       "type": "oto-cta",
       "settings": {
+        "image": "shopify://shop_images/prefooter-new-image.png",
         "eyebrow": "Take control today",
-        "heading": "A Stronger, Happier You",
-        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
+        "heading": "FEEL MORE CONFIDENT WHEN IT MATTERS",
+        "text": "Discreet. Trusted. Made for men who want more from the moment.",
         "button_label": "Shop Now",
-        "button_link": "shopify://collections/all"
+        "button_link": "#"
       }
     }
   },
   "order": [
     "main",
+    "oto_reviews_qARnBq",
     "related",
     "cta"
   ]

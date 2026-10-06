@@ -18,7 +18,7 @@
 .oto-footer__field input[type='email'] { flex: 1; min-width: 0; height: 48px; padding: 0 14px; border: 0; border-radius: 0; background: none; box-shadow: none; color: #f7f3ef; font: inherit; font-size: 14.4px; }
 .oto-footer__field input[type='email']::placeholder { color: #7c7673; }
 .oto-footer__field input[type='email']:focus { outline: none; box-shadow: none; }
-.oto-footer__field button { display: grid; place-items: center; width: 52px; border: 0; background: #17191c; color: #f7f3ef; cursor: pointer; }
+.oto-footer__field button { display: grid; place-items: center; width: 52px; border: 0; background: #e3222e; color: #f7f3ef; cursor: pointer; }
 .oto-footer__field button:hover { background: #e3222e; }
 .oto-footer__field .oto-icon { color: currentColor; width: 18px; height: 18px; }
 .oto-footer__msg { margin: 8px 0 0 !important; color: #3fbf7f; font-size: 13.5px !important; }

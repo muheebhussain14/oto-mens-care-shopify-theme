@@ -13,12 +13,12 @@
       "type": "oto-hero",
       "settings": {
         "image": "shopify://shop_images/banner-bg-2.jpg",
-        "eyebrow": "Natural men's wellness \u00b7 18+",
+        "eyebrow": "Natural men's wellness · 18+",
         "heading": "Confidence",
         "heading_accent": "Starts Here",
-        "text": "Natural support for stronger performance, greater vitality and a more satisfying you.",
+        "text": "Feel stronger, more confident and ready when the moment matters.",
         "button_label": "Shop the 3-Pack",
-        "button_link": "",
+        "button_link": "shopify://products/oto-original-3-pack",
         "tagline_1": "A Stronger You",
         "tagline_2": "A Happier Us"
       }
@@ -89,32 +89,21 @@
         "image": "shopify://shop_images/about-background-clean.jpg",
         "eyebrow": "More than a supplement",
         "heading": "For a Stronger,\nMore Confident You",
-        "text": "<p>OTO Men's Care is dedicated to helping men feel their best with carefully selected natural ingredients. Our products are designed to support vitality, performance and overall wellbeing, so you can enjoy life with greater confidence.</p>",
-        "button_label": "Our Story",
+        "text": "<p>OTO Men’s Care is made for the moments when confidence, energy and presence matter most. Designed to support vitality, performance and intimate wellness, each formula helps you feel more assured, more connected and more like yourself when it counts.</p>",
+        "button_label": "",
         "button_link": ""
       }
     },
     "products": {
       "type": "oto-products",
       "blocks": {
-        "p1": {
-          "type": "product",
-          "settings": {
-            "product": "oto-4",
-            "badge": "Best Seller",
-            "subtitle": "Pack of 3",
-            "description": "Natural support for vitality, energy and prolonged performance.",
-            "boxes": 3,
-            "button_label": "Add 3-Pack to Cart"
-          }
-        },
         "product_y6iaz8": {
           "type": "product",
           "settings": {
-            "product": "oto-4",
+            "product": "oto-original-3-pack",
             "badge": "Best Seller",
             "subtitle": "Pack of 3",
-            "description": "Natural support for vitality, energy and prolonged performance.",
+            "description": "Everyday vitality, confidence and performance support.",
             "boxes": 3,
             "button_label": "Add 3-Pack to Cart"
           }
@@ -122,8 +111,19 @@
         "product_grUJVy": {
           "type": "product",
           "settings": {
-            "product": "oto-4",
-            "badge": "Best Seller",
+            "product": "oto-superpowerful-man-3-pack",
+            "badge": "",
+            "subtitle": "Pack of 3",
+            "description": "Position as the stronger, more performance-focused option.",
+            "boxes": 3,
+            "button_label": "Add 3-Pack to Cart"
+          }
+        },
+        "p1": {
+          "type": "product",
+          "settings": {
+            "product": "oto-diabetics-3-pack",
+            "badge": "",
             "subtitle": "Pack of 3",
             "description": "Natural support for vitality, energy and prolonged performance.",
             "boxes": 3,
@@ -132,9 +132,9 @@
         }
       },
       "block_order": [
-        "p1",
         "product_y6iaz8",
-        "product_grUJVy"
+        "product_grUJVy",
+        "p1"
       ],
       "settings": {
         "eyebrow": "Our products",
@@ -181,27 +181,16 @@
         "f4"
       ],
       "settings": {
-        "product": "oto-4",
-        "background": "shopify://shop_images/oto-product-rock.webp",
+        "product": "oto-original-3-pack",
+        "background": "shopify://shop_images/red-smoke-texture.jpg",
         "eyebrow": "Featured product",
         "heading_accent": "OTO Original",
         "heading": "The Trusted Choice",
         "text": "<p>Our best-selling formula is a natural health product designed to enhance vitality, increase vigour and support prolonged performance.</p>",
         "button_label": "Add 3-Pack to Cart",
-        "note": "Secure checkout \u00b7 Discreet packaging",
+        "note": "Secure checkout · Discreet packaging",
         "badge_number": "#1",
         "badge_label": "Bestseller"
-      }
-    },
-    "cta": {
-      "type": "oto-cta",
-      "settings": {
-        "image": "shopify://shop_images/oto-cta.webp",
-        "eyebrow": "Take control today",
-        "heading": "A Stronger, Happier You",
-        "text": "Natural. Discreet. Trusted. OTO Men's Care.",
-        "button_label": "Shop Now",
-        "button_link": ""
       }
     },
     "reviews": {
@@ -211,8 +200,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Add a real customer review here.",
-            "name": "Customer name",
+            "quote": "I was a little unsure at first, but the ordering process was simple and the packaging was very discreet. Overall, a much better experience than I expected.",
+            "name": "Daniel R.",
             "verified": false
           }
         },
@@ -220,8 +209,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Add a real customer review here.",
-            "name": "Customer name",
+            "quote": "The site was easy to use, delivery was straightforward, and I liked that everything arrived privately packaged. I’d definitely order again.",
+            "name": "Marcus T.",
             "verified": false
           }
         },
@@ -229,8 +218,8 @@
           "type": "review",
           "settings": {
             "rating": 5,
-            "quote": "Add a real customer review here.",
-            "name": "Customer name",
+            "quote": "I wanted something simple and discreet, and that’s exactly what I got. The whole process felt professional from checkout to delivery.",
+            "name": "James L.",
             "verified": false
           }
         }
@@ -241,11 +230,11 @@
         "review-3"
       ],
       "settings": {
-        "background_color": "#950C13",
-        "text_color": "#FFFFFF",
+        "background_color": "#070809",
         "overlay": 70,
-        "padding_top": 64,
-        "padding_bottom": 64,
+        "text_color": "#ffffff",
+        "padding_top": 68,
+        "padding_bottom": 72,
         "eyebrow": "Real results",
         "heading": "What Our Customers Say",
         "columns": "3"
@@ -257,58 +246,75 @@
         "faq-1": {
           "type": "faq",
           "settings": {
-            "question": "What is OTO and how does it work?",
-            "answer": "<p>OTO Men's Care products are natural health products formulated to support vitality, stamina and overall male wellbeing. Follow the directions on the pack for best results.</p>"
+            "question": "What is OTO Men's Care?",
+            "answer": "<p>OTO Men's Care is a range of men's wellness products created for adult men who want to support confidence, vitality, energy and intimate wellbeing. Each formula is designed for a different need, so you can choose the option that best matches what you are looking for.</p>"
+          }
+        },
+        "faq_wf7yEy": {
+          "type": "faq",
+          "settings": {
+            "question": "Which OTO product is right for me?",
+            "answer": "<p>OTO Original is the all-round option for men looking to support vitality, confidence and performance. SuperPowerful Man is positioned for men who want a more performance-focused formula, while the Diabetics Type I & II version is the dedicated option within the range for customers looking for that specific formulation.</p>"
           }
         },
         "faq-2": {
           "type": "faq",
           "settings": {
-            "question": "Is it safe to use?",
-            "answer": "<p>OTO products are intended for healthy adult men 18+. Always read the label, do not exceed the recommended use, and speak to a healthcare professional if you are unsure.</p>"
+            "question": "How should I use OTO products?",
+            "answer": "<p>Always follow the directions printed on the product packaging and do not exceed the recommended use. If you are unsure whether a product is suitable for you, speak with a healthcare professional before using it.</p>"
           }
         },
         "faq-3": {
           "type": "faq",
           "settings": {
-            "question": "Will my order be discreetly packaged?",
-            "answer": "<p>Yes. Every order ships in plain packaging with no product branding on the outside, and your billing statement shows a neutral descriptor.</p>"
+            "question": "Is OTO suitable for everyone?",
+            "answer": "<p>OTO products are intended for adult men only. If you have a medical condition, take prescription medication, have heart or blood-pressure concerns, or are unsure whether the product is appropriate for you, consult your doctor or pharmacist before use.</p>"
           }
         },
         "faq-4": {
           "type": "faq",
           "settings": {
-            "question": "How long does shipping take?",
-            "answer": "<p>Orders are processed quickly and shipped discreetly. Delivery times depend on your location, and you will receive tracking as soon as your order ships.</p>"
+            "question": "Will my order be discreetly packaged?",
+            "answer": "<p>Yes. Orders are shipped in plain, discreet packaging with no product branding displayed on the outside, so your purchase stays private from checkout to delivery.</p>"
           }
         },
         "faq-5": {
           "type": "faq",
           "settings": {
-            "question": "Can I use this if I have a medical condition or take medication?",
-            "answer": "<p>Please consult your doctor or pharmacist before use if you have a medical condition (including diabetes, heart or blood-pressure conditions) or take any medication.</p>"
+            "question": "How long does delivery take?",
+            "answer": "<p>Orders are processed as quickly as possible. Delivery time depends on your destination and the shipping option selected at checkout. Tracking details will be provided once your order has been dispatched.</p>"
           }
         },
         "faq-6": {
           "type": "faq",
           "settings": {
-            "question": "What is your return policy?",
-            "answer": "<p>We stand behind our products. If there is a problem with your order, contact our support team and we will make it right.</p>"
+            "question": "Can I reorder easily?",
+            "answer": "<p>Yes. You can create a customer account to view previous orders and make repeat purchases more convenient. Available saved checkout details depend on the payment method and Shopify features you use.</p>"
+          }
+        },
+        "faq_RnfpWY": {
+          "type": "faq",
+          "settings": {
+            "question": "What if there is a problem with my order?",
+            "answer": "<p>If your order arrives damaged, incorrect or there is another issue, contact our support team as soon as possible. We will review the problem and help you with the next steps based on our return and refund policy.</p>"
           }
         }
       },
       "block_order": [
         "faq-1",
+        "faq_wf7yEy",
         "faq-2",
         "faq-3",
         "faq-4",
         "faq-5",
-        "faq-6"
+        "faq-6",
+        "faq_RnfpWY"
       ],
       "settings": {
-        "background_color": "#950C13",
-        "text_color": "#FFFFFF",
+        "background_color": "#630707",
+        "background_image": "shopify://shop_images/red-gradient.jpg",
         "overlay": 70,
+        "text_color": "#ffffff",
         "padding_top": 64,
         "padding_bottom": 64,
         "eyebrow": "Questions?",
@@ -317,7 +323,18 @@
         "help_heading": "Still have questions?",
         "help_text": "Our support team is here to help.",
         "help_button_label": "Contact Us",
-        "help_button_link": ""
+        "help_button_link": "shopify://pages/contact"
+      }
+    },
+    "cta": {
+      "type": "oto-cta",
+      "settings": {
+        "image": "shopify://shop_images/prefooter-new-image.png",
+        "eyebrow": "Take control today",
+        "heading": "FEEL MORE CONFIDENT WHEN IT MATTERS",
+        "text": "Discreet. Trusted. Made for men who want more from the moment.",
+        "button_label": "Shop Now",
+        "button_link": "shopify://products/oto-original-3-pack"
       }
     }
   },

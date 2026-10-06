@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.footer.name",
   "type": "footer",
@@ -5,13 +14,18 @@
     "footer": {
       "type": "oto-footer",
       "settings": {
+        "logo": "shopify://shop_images/OTO-Mens-Care-Red-Oval-Logo.png",
+        "text": "Natural support for vitality, performance and confidence. For men 18+.",
         "menu_1_title": "Shop",
         "menu_1": "footer",
         "menu_2_title": "Customer Care",
+        "menu_2": "",
         "show_newsletter": true,
         "news_title": "Stay Connected",
         "news_text": "Get the latest updates and exclusive offers.",
-        "news_placeholder": "Your email address"
+        "news_placeholder": "Your email address",
+        "copyright": "OTO Men's Care. All rights reserved. For adults 18+. Discreet products. A stronger tomorrow.",
+        "disclaimer": "These statements have not been evaluated by any health authority. These products are not intended to diagnose, treat, cure or prevent any disease. Consult a healthcare professional before use, especially if you have a medical condition or take medication."
       }
     }
   },

@@ -1,6 +1,10 @@
 /* OTO Men's Care: homepage sections (oto-hero, oto-trust-strip, oto-story, oto-products,
    oto-featured-product, oto-faq-reviews, oto-cta, oto-legal). Sizes are px because Dawn's root font-size is 10px. */
 
+html {
+  scroll-behavior: smooth !important;
+}
+
 /* ================= hero ================= */
 .oto-hero { position: relative; isolation: isolate; overflow: hidden; background: var(--oto-bg); }
 .oto-hero__bg { position: absolute; inset: 0; z-index: -2; display: block; }
