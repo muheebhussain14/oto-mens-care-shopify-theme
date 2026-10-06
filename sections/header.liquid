@@ -22,6 +22,16 @@
     margin-left: -1.2rem;
   }
 
+  .header__heading-logo-wrapper {
+    width: {{ settings.logo_width }}px;
+    max-width: 100%;
+    transition: width 0.35s cubic-bezier(0.22, 0.8, 0.3, 1);
+  }
+
+  .section-header.scrolled-past-header .header__heading-logo-wrapper {
+    width: {{ settings.logo_width | times: 0.8 | round }}px;
+  }
+
   {%- if section.settings.sticky_header_type == 'reduce-logo-size' -%}
     .scrolled-past-header .header__heading-logo-wrapper {
       width: 75%;
@@ -182,7 +192,7 @@
 
     {%- if section.settings.logo_position != 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
+        <div class="header__heading">
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {%- if settings.logo != blank -%}
@@ -209,7 +219,7 @@
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
-        </h1>
+        </div>
       {%- endif -%}
     {%- endif -%}
 
@@ -225,7 +235,7 @@
 
     {%- if section.settings.logo_position == 'middle-center' -%}
       {%- if request.page_type == 'index' -%}
-        <h1 class="header__heading">
+        <div class="header__heading">
       {%- endif -%}
       <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
         {%- if settings.logo != blank -%}
@@ -252,7 +262,7 @@
         {%- endif -%}
       </a>
       {%- if request.page_type == 'index' -%}
-        </h1>
+        </div>
       {%- endif -%}
     {%- endif -%}
 
@@ -284,7 +294,7 @@
 
       {%- if shop.customer_accounts_enabled -%}
         <shopify-account
-          menu="{{ settings.customer_account_menu | default: 'customer-account-main-menu' }}"
+          {% if settings.customer_account_menu != blank %}menu="{{ settings.customer_account_menu }}"{% endif %}
           class="header__icon header__icon--account link focus-inset"
         >
           <span slot="signed-out-avatar" class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>

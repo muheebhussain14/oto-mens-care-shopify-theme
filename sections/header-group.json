@@ -17,16 +17,40 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Discreet Shipping  |  Private Packaging  |  Your Privacy is Our Priority",
+            "text": "Discreet by Design. Made for Confidence.",
+            "link": ""
+          }
+        },
+        "announcement-bar-1": {
+          "type": "announcement",
+          "settings": {
+            "text": "Private Packaging. Premium Experience.",
+            "link": ""
+          }
+        },
+        "announcement-bar-2": {
+          "type": "announcement",
+          "settings": {
+            "text": "Confidence, Delivered Discreetly.",
+            "link": ""
+          }
+        },
+        "announcement-bar-3": {
+          "type": "announcement",
+          "settings": {
+            "text": "21+ Men's Wellness. Private. Secure. Discreet.",
             "link": ""
           }
         }
       },
       "block_order": [
-        "announcement-bar-0"
+        "announcement-bar-0",
+        "announcement-bar-1",
+        "announcement-bar-2",
+        "announcement-bar-3"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "scheme-4",
         "show_line_separator": false,

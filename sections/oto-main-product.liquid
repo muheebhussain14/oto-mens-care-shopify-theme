@@ -1,9 +1,14 @@
 {{ 'oto-home.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
 
 {%- liquid
   assign current = product.selected_or_first_available_variant
   assign form_id = 'oto-pdp-form-' | append: section.id
   assign images = product.media | where: 'media_type', 'image'
+  assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src'
+  assign first_3d_model = product.media | where: 'media_type', 'model' | first
 -%}
 
 <section class="oto-pdp" data-oto-product {{ section.shopify_attributes }}>
@@ -14,48 +19,15 @@
       <li aria-current="page">{{ product.title }}</li>
     </ul>
 
-    <div class="oto-pdp__grid">
-      <div class="oto-pdp__gallery">
-        <div class="oto-card oto-pdp__main">
-          <span data-oto-pill>{% render 'oto-save-pill', variant: current %}</span>
-          {%- if images.size > 0 -%}
-            {{
-              images.first
-              | image_url: width: 1400
-              | image_tag:
-                widths: '600, 900, 1200, 1400',
-                sizes: '(min-width: 990px) 50vw, 100vw',
-                loading: 'eager',
-                fetchpriority: 'high',
-                alt: images.first.alt | default: product.title,
-                data-oto-main: true
-            }}
-          {%- else -%}
-            {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
-          {%- endif -%}
-        </div>
-        {%- if images.size > 1 -%}
-          <ul class="oto-pdp__thumbs">
-            {%- for image in images -%}
-              <li>
-                <button
-                  type="button"
-                  aria-label="{{ 'Show image' }} {{ forloop.index }}"
-                  aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}"
-                  data-oto-thumb
-                  data-src="{{ image | image_url: width: 1400 }}"
-                  data-srcset="{{ image | image_url: width: 600 }} 600w, {{ image | image_url: width: 900 }} 900w, {{ image | image_url: width: 1400 }} 1400w"
-                  data-alt="{{ image.alt | default: product.title | escape }}"
-                >
-                  {{ image | image_url: width: 160 | image_tag: width: 80, loading: 'lazy', alt: '' }}
-                </button>
-              </li>
-            {%- endfor -%}
-          </ul>
+    <div class="product product--{{ section.settings.media_size }} product--left product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} oto-pdp__grid grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+      <div class="grid__item product__media-wrapper oto-pdp__gallery">
+        {%- if product.media.size > 0 -%}
+          <span class="oto-pdp__pill" data-oto-pill>{% render 'oto-save-pill', variant: current %}</span>
         {%- endif -%}
+        {% render 'product-media-gallery', variant_images: variant_images %}
       </div>
 
-      <div class="oto-pdp__info">
+      <div class="grid__item product__info-wrapper oto-pdp__info">
         {%- if section.settings.eyebrow != blank -%}<p class="oto-eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
         <h1 class="oto-h2 oto-pdp__title">{{ product.title }}</h1>
         {%- if product.vendor != blank and section.settings.show_vendor -%}<p class="oto-pdp__sub">{{ product.vendor }}</p>{%- endif -%}
@@ -93,6 +65,7 @@
                     data-price="{{ variant.price | money }}"
                     data-compare="{% if variant.compare_at_price > variant.price %}{{ variant.compare_at_price | money }}{% endif %}"
                     data-available="{{ variant.available }}"
+                    data-media-id="{{ variant.featured_media.id }}"
                     {% if variant == current %}selected{% endif %}
                     {% unless variant.available %}disabled{% endunless %}
                   >
@@ -176,6 +149,18 @@
 <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'oto-faq.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'oto-product.js' | asset_url }}" defer="defer"></script>
+{%- if product.media.size > 0 -%}
+  <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+  {% render 'product-media-modal', variant_images: variant_images %}
+{%- endif -%}
+{%- if first_3d_model -%}
+  {{ 'component-product-model.css' | asset_url | stylesheet_tag }}
+  <script type="application/json" id="ProductJSON-{{ product.id }}">
+    {{ product.media | where: 'media_type', 'model' | json }}
+  </script>
+  <script src="{{ 'product-model.js' | asset_url }}" defer></script>
+{%- endif -%}
 
 <script type="application/ld+json">
   {{ product | structured_data }}
@@ -186,6 +171,38 @@
   "name": "OTO Product",
   "tag": "section",
   "settings": [
+    { "type": "header", "content": "Gallery" },
+    { "type": "select", "id": "gallery_layout", "label": "Desktop layout", "default": "thumbnail", "options": [
+      { "value": "stacked", "label": "Stacked" },
+      { "value": "columns", "label": "2 columns" },
+      { "value": "thumbnail", "label": "Thumbnails" },
+      { "value": "thumbnail_slider", "label": "Thumbnail slider" }
+    ] },
+    { "type": "select", "id": "media_size", "label": "Media width", "default": "medium", "options": [
+      { "value": "small", "label": "Small" },
+      { "value": "medium", "label": "Medium" },
+      { "value": "large", "label": "Large" }
+    ] },
+    { "type": "select", "id": "mobile_thumbnails", "label": "Mobile layout", "default": "hide", "options": [
+      { "value": "columns", "label": "2 columns" },
+      { "value": "show", "label": "Show thumbnails" },
+      { "value": "hide", "label": "Hide thumbnails" }
+    ] },
+    { "type": "select", "id": "image_zoom", "label": "Image zoom", "default": "lightbox", "options": [
+      { "value": "lightbox", "label": "Open lightbox on click" },
+      { "value": "hover", "label": "Hover zoom" },
+      { "value": "none", "label": "No zoom" }
+    ] },
+    { "type": "select", "id": "media_fit", "label": "Image fit", "default": "contain", "options": [
+      { "value": "contain", "label": "Show whole image" },
+      { "value": "cover", "label": "Fill the frame" }
+    ] },
+    { "type": "checkbox", "id": "constrain_to_viewport", "label": "Limit media height to the screen", "default": true },
+    { "type": "checkbox", "id": "hide_variants", "label": "Hide other variants' media after selecting a variant", "default": false },
+    { "type": "checkbox", "id": "enable_video_looping", "label": "Loop videos", "default": false },
+    { "type": "checkbox", "id": "enable_sticky_info", "label": "Keep the gallery in view while scrolling", "default": false },
+    { "type": "color_scheme", "id": "color_scheme", "label": "Color scheme", "default": "scheme-1" },
+    { "type": "header", "content": "Details" },
     { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Pack of 3" },
     { "type": "checkbox", "id": "show_vendor", "label": "Show vendor", "default": false },
     { "type": "range", "id": "boxes", "label": "Boxes per pack", "info": "Used for the per-box price. Set to 1 to hide it.", "min": 1, "max": 12, "step": 1, "default": 3 },

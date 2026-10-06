@@ -49,6 +49,11 @@
       {%- for link in section.settings.menu_2.links -%}
         <a href="{{ link.url }}">{{ link.title }}</a>
       {%- endfor -%}
+      {%- if section.settings.show_account and shop.customer_accounts_enabled -%}
+        <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}">
+          {%- if customer %}{{ 'customer.account.title' | t }}{% else %}{{ 'customer.log_in' | t }}{% endif -%}
+        </a>
+      {%- endif -%}
     </nav>
 
     {%- if section.settings.show_newsletter -%}
@@ -85,6 +90,20 @@
     {%- if section.settings.disclaimer != blank -%}
       <p class="oto-footer__disclaimer">{{ section.settings.disclaimer }}</p>
     {%- endif -%}
+    {%- if section.settings.show_policies and shop.policies.size > 0 -%}
+      <ul class="oto-footer__policies" role="list">
+        {%- for policy in shop.policies -%}
+          <li><a href="{{ policy.url }}">{{ policy.title }}</a></li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+    {%- if section.settings.show_payment_icons and shop.enabled_payment_types.size > 0 -%}
+      <ul class="oto-footer__payments" role="list" aria-label="{{ 'sections.footer.payment' | t }}">
+        {%- for type in shop.enabled_payment_types -%}
+          <li>{{ type | payment_type_svg_tag: class: 'oto-footer__payment-icon' }}</li>
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
   </div>
 </footer>
 
@@ -94,7 +113,7 @@
   "tag": "section",
   "settings": [
     { "type": "image_picker", "id": "logo", "label": "Logo", "info": "White logo on a transparent background." },
-    { "type": "textarea", "id": "text", "label": "Brand text", "default": "Natural support for vitality, performance and confidence. For men 18+." },
+    { "type": "textarea", "id": "text", "label": "Brand text", "default": "Natural support for vitality, performance and confidence. For men 21+." },
     { "type": "header", "content": "Menus" },
     { "type": "text", "id": "menu_1_title", "label": "First menu heading", "default": "Shop" },
     { "type": "link_list", "id": "menu_1", "label": "First menu", "default": "footer" },
@@ -106,7 +125,10 @@
     { "type": "text", "id": "news_text", "label": "Text", "default": "Get the latest updates and exclusive offers." },
     { "type": "text", "id": "news_placeholder", "label": "Placeholder", "default": "Your email address" },
     { "type": "header", "content": "Legal" },
-    { "type": "text", "id": "copyright", "label": "Copyright text (year is added automatically)", "default": "OTO Men's Care. All rights reserved. For adults 18+. Discreet products. A stronger tomorrow." },
+    { "type": "checkbox", "id": "show_policies", "label": "Show policy links", "info": "Lists the policies saved in Settings → Policies (Privacy, Terms, Shipping, Refund).", "default": true },
+    { "type": "checkbox", "id": "show_account", "label": "Show account link in the second menu", "default": true },
+    { "type": "checkbox", "id": "show_payment_icons", "label": "Show payment icons", "default": true },
+    { "type": "text", "id": "copyright", "label": "Copyright text (year is added automatically)", "default": "OTO Men's Care. All rights reserved. For adults 21+. Discreet products. A stronger tomorrow." },
     { "type": "textarea", "id": "disclaimer", "label": "Health disclaimer", "default": "These statements have not been evaluated by any health authority. These products are not intended to diagnose, treat, cure or prevent any disease. Consult a healthcare professional before use, especially if you have a medical condition or take medication." }
   ]
 }

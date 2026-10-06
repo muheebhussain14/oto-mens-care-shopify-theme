@@ -72,7 +72,7 @@
           "type": "accordion",
           "settings": {
             "heading": "Ingredients & warnings",
-            "content": "<p>Add the full ingredient list from the product label.</p><ul><li>For adult men 18+ only.</li><li>Consult a healthcare professional before use if you have a medical condition or take medication.</li><li>Discontinue use and seek advice if you experience any adverse reaction.</li></ul>"
+            "content": "<p>Add the full ingredient list from the product label.</p><ul><li>For adult men 21+ only.</li><li>Consult a healthcare professional before use if you have a medical condition or take medication.</li><li>Discontinue use and seek advice if you experience any adverse reaction.</li></ul>"
           }
         },
         "a3": {

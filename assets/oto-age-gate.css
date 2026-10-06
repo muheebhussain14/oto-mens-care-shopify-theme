@@ -1,0 +1,7 @@
+.oto-age { position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center; padding: 20px; background: rgba(4, 4, 5, 0.96); backdrop-filter: blur(8px); }
+.oto-age[hidden] { display: none; }
+.oto-age__box { width: min(440px, 100%); padding: 36px 28px; border: 1px solid rgba(227, 34, 46, 0.4); border-radius: 18px; background: #111315; text-align: center; box-shadow: 0 0 80px -20px rgba(227, 34, 46, 0.5); }
+.oto-age__box h2 { margin: 0 0 10px; font: 700 26px/1.2 var(--font-heading-family); text-transform: uppercase; color: #f7f3ef; }
+.oto-age__box p { margin: 0 0 24px; color: #b5afab; }
+.oto-age__btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+html.oto-age-open { overflow: hidden; }

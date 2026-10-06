@@ -3,14 +3,14 @@
 .oto-footer__grid { display: grid; grid-template-columns: 1.3fr 0.8fr 0.9fr 1.3fr; gap: 32px clamp(24px, 4vw, 56px); }
 .oto-footer__brand .oto-footer__logo { display: inline-block; margin-bottom: 14px; }
 .oto-footer__brand img { display: block; width: auto; height: 56px; max-width: 100%; }
-.oto-footer__logo--text { font: 700 30px/1 var(--font-heading-family); color: #f7f3ef; text-decoration: none; }
+.oto-footer__logo--text { font: 700 30px/1 var(--font-heading-family); color: #f7f3ef; }
 .oto-footer__brand p { max-width: 280px; margin: 0 0 16px; font-size: 14.4px; line-height: 1.6; }
 .oto-footer__social { display: flex; gap: 8px; margin: 0; padding: 0; list-style: none; }
 .oto-footer__social a { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #2b2c2f; border-radius: 50%; color: #f7f3ef; transition: border-color 0.2s; }
 .oto-footer__social a:hover { border-color: #e3222e; }
 .oto-footer__social .oto-icon { width: 18px; height: 18px; color: currentColor; }
 .oto-footer__heading { margin: 0 0 18px; font: 700 13px/1 var(--font-body-family); letter-spacing: 0.1em; text-transform: uppercase; color: #f7f3ef; }
-.oto-footer__col a { display: block; padding: 5px 0; font-size: 14.8px; color: #b5afab; text-decoration: none; transition: color 0.2s; }
+.oto-footer__col a { display: block; padding: 5px 0; font-size: 14.8px; color: #b5afab; }
 .oto-footer__col a:hover { color: #f7f3ef; }
 .oto-footer__news p { margin: 0 0 14px; font-size: 14.4px; }
 .oto-footer__field { display: flex; overflow: hidden; border: 1px solid #2b2c2f; border-radius: 8px; background: #111315; }
@@ -28,3 +28,8 @@
 .oto-footer__disclaimer { max-width: 900px; font-size: 11.8px !important; line-height: 1.5; color: #8d8785; }
 @media screen and (max-width: 989px) { .oto-footer__grid { grid-template-columns: 1fr 1fr; } .oto-footer__brand, .oto-footer__news { grid-column: 1 / -1; } .oto-footer__brand p { max-width: none; } }
 @media screen and (max-width: 479px) { .oto-footer__grid { grid-template-columns: 1fr; } }
+.oto-footer__payments { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 0; padding: 0; list-style: none; }
+.oto-footer__payment-icon { display: block; width: 38px; height: 24px; }
+.oto-footer__policies { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 0; padding: 0; list-style: none; }
+.oto-footer__policies a { color: #b5afab; font-size: 12.8px; }
+.oto-footer__policies a:hover { color: #f7f3ef; }

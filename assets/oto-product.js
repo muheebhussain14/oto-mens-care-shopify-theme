@@ -1,19 +1,8 @@
-/* OTO product page: gallery thumbnails, variant select, quantity stepper and the mobile sticky buy bar. */
+/* OTO product page: quantity stepper, variant select (price + gallery media) and the mobile sticky buy bar.
+   The gallery itself (thumbnails, prev/next, zoom) is Dawn's <media-gallery>, so we only tell it which media to show. */
 (function () {
   var root = document.querySelector('[data-oto-product]');
   if (!root) return;
-
-  /* gallery */
-  var main = root.querySelector('[data-oto-main]');
-  root.querySelectorAll('[data-oto-thumb]').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      if (!main) return;
-      main.src = btn.dataset.src;
-      main.srcset = btn.dataset.srcset;
-      main.alt = btn.dataset.alt;
-      root.querySelectorAll('[data-oto-thumb]').forEach(function (b) { b.setAttribute('aria-pressed', b === btn); });
-    });
-  });
 
   /* quantity */
   root.querySelectorAll('[data-oto-qty]').forEach(function (btn) {
@@ -23,7 +12,7 @@
     });
   });
 
-  /* variant select updates the price shown */
+  /* variant select: update the price, the pill and the gallery */
   var select = root.querySelector('[data-oto-variant]');
   if (select) {
     select.addEventListener('change', function () {
@@ -37,6 +26,12 @@
       }
       var sticky = document.querySelector('[data-oto-sticky-price]');
       if (sticky) sticky.textContent = opt.dataset.price;
+
+      var gallery = root.querySelector('media-gallery');
+      var sectionId = gallery && gallery.id.replace('MediaGallery-', '');
+      if (gallery && opt.dataset.mediaId && typeof gallery.setActiveMedia === 'function') {
+        gallery.setActiveMedia(sectionId + '-' + opt.dataset.mediaId, true);
+      }
     });
   }
 

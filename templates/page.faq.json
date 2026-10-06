@@ -3,7 +3,8 @@
     "head": {
       "type": "oto-page-head",
       "settings": {
-        "text": "Everything you need to know before you order."
+        "text": "Everything you need to know before you order.",
+        "heading": "FAQs"
       }
     },
     "faq": {
@@ -20,7 +21,7 @@
           "type": "faq",
           "settings": {
             "question": "Is it safe to use?",
-            "answer": "<p>OTO products are intended for healthy adult men 18+. Always read the label, do not exceed the recommended use, and speak to a healthcare professional if you are unsure.</p>"
+            "answer": "<p>OTO products are intended for healthy adult men 21+. Always read the label, do not exceed the recommended use, and speak to a healthcare professional if you are unsure.</p>"
           }
         },
         "f3": {

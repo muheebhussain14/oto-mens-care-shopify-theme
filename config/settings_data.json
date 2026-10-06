@@ -108,7 +108,7 @@
     "sale_badge_color_scheme": "scheme-5",
     "sold_out_badge_color_scheme": "scheme-2",
     "brand_headline": "",
-    "brand_description": "<p>Natural support for vitality, performance and confidence. For men 18+.</p>",
+    "brand_description": "<p>Natural support for vitality, performance and confidence. For men 21+.</p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -128,7 +128,7 @@
     "show_cart_note": false,
     "cart_drawer_collection": "",
     "cart_color_scheme": "scheme-1",
-    "customer_account_menu": "customer-account-main-menu",
+    "customer_account_menu": "",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -205,7 +205,7 @@
   "presets": {
     "Dawn": {
       "logo_width": 120,
-      "customer_account_menu": "customer-account-main-menu",
+      "customer_account_menu": "",
       "color_schemes": {
         "scheme-1": {
           "settings": {
@@ -359,7 +359,7 @@
       "sale_badge_color_scheme": "scheme-5",
       "sold_out_badge_color_scheme": "scheme-2",
       "brand_headline": "",
-      "brand_description": "<p>Natural support for vitality, performance and confidence. For men 18+.</p>",
+      "brand_description": "<p>Natural support for vitality, performance and confidence. For men 21+.</p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",

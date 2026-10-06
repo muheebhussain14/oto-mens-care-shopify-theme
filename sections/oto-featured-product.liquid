@@ -2,7 +2,11 @@
 
 {%- assign product = section.settings.product -%}
 {%- assign variant = product.selected_or_first_available_variant -%}
-{%- assign image = product.featured_media.preview_image -%}
+{%- if section.settings.custom_image != blank -%}
+  {%- assign image = section.settings.custom_image -%}
+{%- else -%}
+  {%- assign image = product.featured_media.preview_image -%}
+{%- endif -%}
 
 <section class="oto-featured" id="oto-featured" {{ section.shopify_attributes }}>
   {%- if section.settings.background != blank -%}
@@ -70,6 +74,7 @@
   "max_blocks": 4,
   "settings": [
     { "type": "product", "id": "product", "label": "Product", "info": "Title, price, compare-at price, image and Add to Cart come from this product." },
+    { "type": "image_picker", "id": "custom_image", "label": "Custom product image (optional)", "info": "Replaces the product photo in this section. Leave empty to use the selected product's main image." },
     { "type": "image_picker", "id": "background", "label": "Background image (optional)" },
     { "type": "text", "id": "eyebrow", "label": "Small label", "default": "Featured product" },
     { "type": "text", "id": "heading_accent", "label": "Heading first line (red)", "default": "OTO Original" },

@@ -15,7 +15,7 @@
       "type": "oto-footer",
       "settings": {
         "logo": "shopify://shop_images/OTO-Mens-Care-Red-Oval-Logo.png",
-        "text": "Natural support for vitality, performance and confidence. For men 18+.",
+        "text": "Natural support for vitality, performance and confidence. For men 21+.",
         "menu_1_title": "Shop",
         "menu_1": "footer",
         "menu_2_title": "Customer Care",
@@ -24,7 +24,7 @@
         "news_title": "Stay Connected",
         "news_text": "Get the latest updates and exclusive offers.",
         "news_placeholder": "Your email address",
-        "copyright": "OTO Men's Care. All rights reserved. For adults 18+. Discreet products. A stronger tomorrow.",
+        "copyright": "OTO Men's Care. All rights reserved. For adults 21+. Discreet products. A stronger tomorrow.",
         "disclaimer": "These statements have not been evaluated by any health authority. These products are not intended to diagnose, treat, cure or prevent any disease. Consult a healthcare professional before use, especially if you have a medical condition or take medication."
       }
     }

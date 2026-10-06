@@ -535,9 +535,9 @@
               endif
             endfor
           -%}
-          {%- if oto_savings > 0 -%}
-            <p class="oto-drawer-savings">{{ 'You save' }} <strong>{{ oto_savings | money }}</strong></p>
-          {%- endif -%}
+          <p class="oto-drawer-savings"{% if oto_savings == 0 %} aria-hidden="true"{% endif %}>
+            {%- if oto_savings > 0 -%}{{ 'You save' }} <strong>{{ oto_savings | money }}</strong>{%- endif -%}
+          </p>
 
           <div class="totals" role="status">
             <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
